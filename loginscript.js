@@ -15,7 +15,8 @@ loginForm.addEventListener("submit", function(event) {
 
     } else {
 
-        alert("Sign in successful!");
+        // credentials look OK for now -> send them to the dashboard
+        window.location.href = "index.html";
 
     }
 
