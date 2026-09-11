@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MyPatientHUB | Dashboard</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="app" id="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">MyPatient<b>HUB</b></span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item active">
+            <a href="#" title="Dashboard">
+              <span class="nav-icon" data-icon="layout-dashboard"></span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Appointments">
+              <span class="nav-icon" data-icon="calendar-check"></span>
+              <span class="nav-label">Appointments</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find Doctor">
+              <span class="nav-icon" data-icon="stethoscope"></span>
+              <span class="nav-label">Find Doctor</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find Clinic">
+              <span class="nav-icon" data-icon="building-2"></span>
+              <span class="nav-label">Find Clinic</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Chat">
+              <span class="nav-icon" data-icon="message-square"></span>
+              <span class="nav-label">Chat</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find MarketPlace">
+              <span class="nav-icon" data-icon="store"></span>
+              <span class="nav-label">Find MarketPlace</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find Pharmacy">
+              <span class="nav-icon" data-icon="pill"></span>
+              <span class="nav-label">Find Pharmacy</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="My Dependents">
+              <span class="nav-icon" data-icon="users"></span>
+              <span class="nav-label">My Dependents</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="My Account">
+              <span class="nav-icon" data-icon="user"></span>
+              <span class="nav-label">My Account</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Settings">
+              <span class="nav-icon" data-icon="settings"></span>
+              <span class="nav-label">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="help-btn" id="helpBtn" aria-label="Help" title="Help">?</button>
+    </aside>
+
+    <!-- ===================== MAIN WRAPPER ===================== -->
+    <div class="main-wrapper">
+
+      <!-- ===================== HEADER ===================== -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger" id="hamburgerBtn" aria-label="Toggle sidebar">
+            <span class="nav-icon" data-icon="menu"></span>
+          </button>
+          <div class="topbar-heading">
+            <div class="breadcrumb">
+              <span class="nav-icon breadcrumb-icon" data-icon="home"></span>
+              <span class="crumb-sep">/</span>
+              <span class="crumb-current">Dashboard</span>
+            </div>
+            <h1 class="page-title">Dashboard</h1>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="search-box">
+            <span class="nav-icon search-icon" data-icon="search"></span>
+            <input type="text" placeholder="Type here..." aria-label="Search" />
+          </div>
+
+          <div class="topbar-actions">
+            <button class="logout-btn">
+              <span class="nav-icon" data-icon="log-out"></span>
+              <span>Log out</span>
+            </button>
+            <button class="icon-btn" aria-label="Settings">
+              <span class="nav-icon" data-icon="settings"></span>
+            </button>
+            <button class="icon-btn" aria-label="Notifications">
+              <span class="nav-icon" data-icon="bell"></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===================== MAIN CONTENT ===================== -->
+      <main class="content">
+        <h2 class="welcome-heading">Welcome To MyPatientHUB!</h2>
+
+        <div class="dashboard-grid">
+
+          <!-- Promotion by Clinics -->
+          <section class="card">
+            <div class="card-header">
+              <h3>Promotion by Clinics</h3>
+              <span class="info-dot"></span>
+            </div>
+            <div class="card-body split">
+              <div class="chart-wrap">
+                <img class="chart-img" src="chartImg.jpg" alt="Promotion by Clinics chart" />
+              </div>
+              <ul class="legend-list" id="clinicsLegend"></ul>
+            </div>
+            <button class="more-details-btn">More Details</button>
+          </section>
+
+          <!-- Promotion by Pharmacies -->
+          <section class="card">
+            <div class="card-header">
+              <h3>Promotion by Pharmacies</h3>
+              <span class="info-dot"></span>
+            </div>
+            <div class="card-body split">
+              <div class="chart-wrap">
+                <img class="chart-img" src="chartImg.jpg" alt="Promotion by Pharmacies chart" />
+              </div>
+              <ul class="legend-list" id="pharmaciesLegend"></ul>
+            </div>
+            <button class="more-details-btn">More Details</button>
+          </section>
+
+          <!-- Smart Market Usage by app -->
+          <section class="card">
+            <div class="card-header">
+              <h3>Smart Market Usage by app</h3>
+              <span class="info-dot"></span>
+            </div>
+            <div class="card-body split">
+              <div class="chart-wrap half">
+                <img class="chart-img" src="chartImg.jpg" alt="Smart Market Usage chart" />
+              </div>
+              <ul class="legend-list" id="marketLegend"></ul>
+            </div>
+            <button class="more-details-btn">More Details</button>
+          </section>
+
+          <!-- Health Index -->
+          <section class="card health-card">
+            <div class="card-header">
+              <h3>Health Index</h3>
+            </div>
+            <div class="health-stat">
+              <span class="health-percent">70%</span>
+              <span class="health-delta">+3%</span>
+            </div>
+            <div class="health-chart-wrap">
+              <img class="chart-img" src="img.jpg" alt="Health Index chart" />
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- ===================== FOOTER ===================== -->
+      <footer class="footer">
+        <p class="footer-copy">© 2026, made with <span class="footer-heart">&#10084;</span> by <b>MyPiHUB</b> for a better web.</p>
+        <nav class="footer-links">
+          <a href="#">MyPatientHUB</a>
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+
+  <script src="icons.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
