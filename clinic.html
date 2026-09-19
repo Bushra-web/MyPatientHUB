@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MyPatientHUB | Find Clinic</title>
+
+    <!-- Your existing Dashboard CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Only for the Find Clinic page -->
+    <link rel="stylesheet" href="clinic.css" />
+  </head>
+
+  <body>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="app" id="app">
+      <!-- ===================== SIDEBAR ===================== -->
+
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+          <span class="logo-mark">M</span>
+
+          <span class="logo-text"> MyPatient<b>HUB</b> </span>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <!-- Dashboard -->
+            <li class="nav-item">
+              <!-- Change index.html if your dashboard has another filename -->
+              <a href="index.html" title="Dashboard">
+                <span class="nav-icon" data-icon="layout-dashboard"> </span>
+
+                <span class="nav-label"> Dashboard </span>
+              </a>
+            </li>
+
+            <!-- Appointments -->
+            <li class="nav-item">
+              <a href="#" title="Appointments">
+                <span class="nav-icon" data-icon="calendar-check"> </span>
+
+                <span class="nav-label"> Appointments </span>
+              </a>
+            </li>
+
+            <!-- Find Doctor -->
+            <li class="nav-item">
+              <a href="#" title="Find Doctor">
+                <span class="nav-icon" data-icon="stethoscope"> </span>
+
+                <span class="nav-label"> Find Doctor </span>
+              </a>
+            </li>
+
+            <!-- FIND CLINIC ACTIVE -->
+            <li class="nav-item active">
+              <a href="clinic.html" title="Find Clinic">
+                <span class="nav-icon" data-icon="building-2"> </span>
+
+                <span class="nav-label"> Find Clinic </span>
+              </a>
+            </li>
+
+            <!-- Chat -->
+            <li class="nav-item">
+              <a href="#" title="Chat">
+                <span class="nav-icon" data-icon="message-square"> </span>
+
+                <span class="nav-label"> Chat </span>
+              </a>
+            </li>
+
+            <!-- Marketplace -->
+            <li class="nav-item">
+              <a href="#" title="Find MarketPlace">
+                <span class="nav-icon" data-icon="store"> </span>
+
+                <span class="nav-label"> Find MarketPlace </span>
+              </a>
+            </li>
+
+            <!-- Pharmacy -->
+            <li class="nav-item">
+              <a href="#" title="Find Pharmacy">
+                <span class="nav-icon" data-icon="pill"> </span>
+
+                <span class="nav-label"> Find Pharmacy </span>
+              </a>
+            </li>
+
+            <!-- Dependents -->
+            <li class="nav-item">
+              <a href="#" title="My Dependents">
+                <span class="nav-icon" data-icon="users"> </span>
+
+                <span class="nav-label"> My Dependents </span>
+              </a>
+            </li>
+
+            <!-- Account -->
+            <li class="nav-item">
+              <a href="#" title="My Account">
+                <span class="nav-icon" data-icon="user"> </span>
+
+                <span class="nav-label"> My Account </span>
+              </a>
+            </li>
+
+            <!-- Settings -->
+            <li class="nav-item">
+              <a href="#" title="Settings">
+                <span class="nav-icon" data-icon="settings"> </span>
+
+                <span class="nav-label"> Settings </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="help-btn" id="helpBtn" aria-label="Help" title="Help">
+          ?
+        </button>
+      </aside>
+
+      <!-- ===================== MAIN WRAPPER ===================== -->
+
+      <div class="main-wrapper">
+        <!-- ===================== HEADER ===================== -->
+
+        <header class="topbar">
+          <div class="topbar-left">
+            <button
+              class="hamburger"
+              id="hamburgerBtn"
+              aria-label="Toggle sidebar"
+            >
+              <span class="nav-icon" data-icon="menu"> </span>
+            </button>
+
+            <div class="topbar-heading">
+              <div class="breadcrumb">
+                <span class="nav-icon breadcrumb-icon" data-icon="home"> </span>
+
+                <span class="crumb-sep"> / </span>
+
+                <span class="crumb-current"> Find Clinic </span>
+              </div>
+
+              <h1 class="page-title">Find Clinic</h1>
+            </div>
+          </div>
+
+          <div class="topbar-right">
+            <div class="search-box">
+              <span class="nav-icon search-icon" data-icon="search"> </span>
+
+              <input
+                type="text"
+                placeholder="Type here..."
+                aria-label="Search"
+              />
+            </div>
+
+            <div class="topbar-actions">
+              <a class="logout-btn" href="login.html">
+                <span class="nav-icon" data-icon="log-out"> </span>
+
+                <span> Log out </span>
+              </a>
+
+              <button class="icon-btn" aria-label="Settings">
+                <span class="nav-icon" data-icon="settings"> </span>
+              </button>
+
+              <button class="icon-btn" aria-label="Notifications">
+                <span class="nav-icon" data-icon="bell"> </span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- ===================== CLINIC CONTENT ===================== -->
+
+        <main class="clinic-content">
+          <!-- ===================== HERO ===================== -->
+
+          <section class="clinic-hero">
+            <div class="hero-content">
+              <h2>Find a Clinic</h2>
+
+              <p>
+                Search Clinics and schedule an appointment with doctors through
+                Clinic
+              </p>
+
+              <div class="hero-search">
+                <input type="text" id="heroClinicSearch" placeholder="Search" />
+
+                <input
+                  type="text"
+                  id="heroLocationSearch"
+                  placeholder="Zip Code or Neighborhood"
+                />
+
+                <button class="current-btn" id="currentBtn">CURRENT</button>
+
+                <button class="hero-search-btn" id="heroSearchBtn">
+                  SEARCH
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- ===================== MAP / LIST ===================== -->
+
+          <div class="view-buttons">
+            <button class="view-btn active" id="mapViewBtn">
+              <span class="nav-icon" data-icon="map"> </span>
+
+              Map
+            </button>
+
+            <button class="view-btn" id="listViewBtn">
+              <span class="nav-icon" data-icon="list"> </span>
+
+              List
+            </button>
+          </div>
+
+          <!-- ===================== SEARCH AREA ===================== -->
+
+          <section class="clinic-main">
+            <!-- ===================== FILTER SIDE ===================== -->
+
+            <aside class="clinic-filters">
+              <div class="filter-search">
+                <input
+                  type="text"
+                  id="filterSearch"
+                  placeholder="Primary Care"
+                />
+
+                <input
+                  type="text"
+                  id="filterLocation"
+                  placeholder="Zip code or Neighborhood"
+                />
+              </div>
+
+              <div class="filter-section">
+                <h3>Filter By</h3>
+
+                <select id="specialty">
+                  <option value="">Specialty</option>
+
+                  <option>Primary Care</option>
+
+                  <option>Cardiology</option>
+
+                  <option>Dermatology</option>
+                </select>
+
+                <select id="gender">
+                  <option value="">Gender</option>
+
+                  <option>Male</option>
+
+                  <option>Female</option>
+                </select>
+
+                <select id="condition">
+                  <option value="">Condition</option>
+
+                  <option>Diabetes</option>
+
+                  <option>Heart Disease</option>
+                </select>
+
+                <select id="languages">
+                  <option value="">Languages</option>
+
+                  <option>English</option>
+
+                  <option>Malay</option>
+
+                  <option>Persian</option>
+                </select>
+              </div>
+
+              <!-- Providers Who Treat -->
+
+              <div class="filter-section">
+                <h3>Providers Who Treat</h3>
+
+                <label class="check-row">
+                  <input type="checkbox" value="all" />
+
+                  <span> All Ages </span>
+                </label>
+
+                <label class="check-row">
+                  <input type="checkbox" value="children" />
+
+                  <span> Children </span>
+                </label>
+
+                <label class="check-row">
+                  <input type="checkbox" value="adults" />
+
+                  <span> Adults </span>
+                </label>
+              </div>
+
+              <!-- View Only -->
+
+              <div class="filter-section">
+                <h3>View Only</h3>
+
+                <label class="check-row">
+                  <input type="checkbox" value="online" />
+
+                  <span> Online Scheduling </span>
+                </label>
+
+                <label class="check-row">
+                  <input type="checkbox" value="primary" />
+
+                  <span> Primary Care </span>
+                </label>
+              </div>
+            </aside>
+
+            <!-- ===================== MAP ===================== -->
+
+            <div class="map-wrapper">
+              <div class="map-tabs">
+                <button class="map-tab active">Map</button>
+
+                <button class="map-tab">Satellite</button>
+              </div>
+
+              <iframe
+                id="clinicMap"
+                class="clinic-map"
+                src="https://www.google.com/maps?q=Kuala%20Lumpur%2C%20Malaysia&output=embed"
+                loading="lazy"
+                allowfullscreen
+              >
+              </iframe>
+
+              <!-- Map markers shown over map -->
+
+              <div class="fake-marker marker-1">
+                <span>●</span>
+              </div>
+
+              <div class="fake-marker marker-2">
+                <span>●</span>
+              </div>
+
+              <div class="fake-marker marker-3">
+                <span>●</span>
+              </div>
+
+              <div class="fake-marker marker-4">
+                <span>●</span>
+              </div>
+
+              <div class="fake-marker marker-5">
+                <span>●</span>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- ===================== FOOTER ===================== -->
+
+        <footer class="footer">
+          <p class="footer-copy">
+            ©️ 2026, made with
+            <span class="footer-heart">&#10084;</span>
+            by <b>MyPiHUB</b>
+            for a better web.
+          </p>
+
+          <nav class="footer-links">
+            <a href="#"> MyPatientHUB </a>
+
+            <a href="#"> About Us </a>
+
+            <a href="#"> Blog </a>
+          </nav>
+        </footer>
+      </div>
+    </div>
+
+    <script src="icons.js"></script>
+    <script src="clinic.js"></script>
+  </body>
+</html>
