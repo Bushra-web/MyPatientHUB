@@ -80,3 +80,4 @@ No build tools or dependencies needed.
 - No real authentication — the login form only checks that fields aren't empty.
 - Facebook, Google, Sign up, and Forgot password buttons are placeholders.
 - Dashboard charts are static images, not a live charting library.
+- Data shown on the dashboard cards is sample/placeholder content.
