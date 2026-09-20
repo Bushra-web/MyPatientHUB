@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MyPatientHUB | Find Doctor</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="finddoctor.css" />
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="app" id="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <span class="logo-mark">M</span>
+        <span class="logo-text">MyPatient<b>HUB</b></span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item">
+            <a href="index.html" title="Dashboard">
+              <span class="nav-icon" data-icon="layout-dashboard"></span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Appointments">
+              <span class="nav-icon" data-icon="calendar-check"></span>
+              <span class="nav-label">Appointments</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="finddoctor.html" title="Find Doctor">
+              <span class="nav-icon" data-icon="stethoscope"></span>
+              <span class="nav-label">Find Doctor</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find Clinic">
+              <span class="nav-icon" data-icon="building-2"></span>
+              <span class="nav-label">Find Clinic</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Chat">
+              <span class="nav-icon" data-icon="message-square"></span>
+              <span class="nav-label">Chat</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find MarketPlace">
+              <span class="nav-icon" data-icon="store"></span>
+              <span class="nav-label">Find MarketPlace</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Find Pharmacy">
+              <span class="nav-icon" data-icon="pill"></span>
+              <span class="nav-label">Find Pharmacy</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="My Dependents">
+              <span class="nav-icon" data-icon="users"></span>
+              <span class="nav-label">My Dependents</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="My Account">
+              <span class="nav-icon" data-icon="user"></span>
+              <span class="nav-label">My Account</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" title="Settings">
+              <span class="nav-icon" data-icon="settings"></span>
+              <span class="nav-label">Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="app-download-card">
+        <span class="app-download-icon">?</span>
+        <p class="app-download-title">Download</p>
+        <p class="app-download-subtitle">MyPIHUB Mobile App</p>
+        <div class="app-download-buttons">
+          <a
+            class="app-store-btn ios"
+            href="https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Download on the App Store"
+          >
+            <span class="nav-icon" data-icon="apple"></span>
+          </a>
+          <a
+            class="app-store-btn android"
+            href="https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Get it on Google Play"
+          >
+            <span class="nav-icon" data-icon="android"></span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================== MAIN WRAPPER ===================== -->
+    <div class="main-wrapper">
+
+      <main class="content">
+
+        <!-- ============ HERO BANNER ============ -->
+        <section class="hero">
+          <!-- header sits on top of the banner image -->
+          <div class="hero-topbar">
+            <div class="topbar-left">
+              <button class="hamburger" id="hamburgerBtn" aria-label="Toggle sidebar">
+                <span class="nav-icon" data-icon="menu"></span>
+              </button>
+              <div class="topbar-heading">
+                <div class="breadcrumb">
+                  <span class="nav-icon breadcrumb-icon" data-icon="home"></span>
+                  <span class="crumb-sep">/</span>
+                  <span class="crumb-current">Searchdoctor</span>
+                </div>
+                <h1 class="page-title">Searchdoctor</h1>
+              </div>
+            </div>
+
+            <div class="topbar-right">
+              <div class="search-box">
+                <span class="nav-icon search-icon" data-icon="search"></span>
+                <input type="text" placeholder="Type here..." aria-label="Search" />
+              </div>
+
+              <div class="topbar-actions">
+                <a class="logout-btn" href="login.html">
+                  <span class="nav-icon" data-icon="log-out"></span>
+                  <span>Log out</span>
+                </a>
+                <button class="icon-btn" aria-label="Settings">
+                  <span class="nav-icon" data-icon="settings"></span>
+                </button>
+                <button class="icon-btn" aria-label="Notifications">
+                  <span class="nav-icon" data-icon="bell"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- banner headline + doctor search -->
+          <div class="hero-body">
+            <h2 class="hero-title">Find a Doctor</h2>
+            <p class="hero-subtitle">Search Doctors and schedule an appointment</p>
+
+            <form class="hero-search" id="doctorSearchForm">
+              <input type="text" id="doctorQuery" placeholder="Search a doctor by name, speciality" />
+              <input type="text" id="doctorZip" placeholder="Zip Code or Neigborhood" />
+              <button type="button" class="hero-btn" id="currentBtn">Current</button>
+              <button type="submit" class="hero-btn">Search</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ============ SPECIAL SERVICES ============ -->
+        <section class="panel">
+          <h2 class="panel-title">Special Services</h2>
+
+          <div class="services-grid">
+
+            <div class="service-item">
+              <button class="service-head" type="button">
+                <span class="service-icon service-icon-pink" data-icon="heart-hands"></span>
+                <span class="service-text">
+                  <span class="service-name">Primary Care and Internal MD</span>
+                  <span class="service-desc">our Doctors Partner with you to help you to reach your welness</span>
+                </span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="service-panel">
+                <p>Routine check-ups, preventive screening and long term care for
+                   everyday health concerns, managed by your primary care team.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button class="service-head" type="button">
+                <span class="service-icon service-icon-teal" data-icon="stethoscope"></span>
+                <span class="service-text">
+                  <span class="service-name">Emergency Care</span>
+                  <span class="service-desc">we provide emergency care for adults and children</span>
+                </span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="service-panel">
+                <p>Round the clock emergency treatment for serious injuries and
+                   sudden illness, for both adults and children.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button class="service-head" type="button">
+                <span class="service-icon service-icon-orange" data-icon="scan-heart"></span>
+                <span class="service-text">
+                  <span class="service-name">Imaging Services</span>
+                  <span class="service-desc">From Xray to MR scan we offer...</span>
+                </span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="service-panel">
+                <p>X-ray, ultrasound, CT and MRI scans carried out on site with
+                   results shared directly with your doctor.</p>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <button class="service-head" type="button">
+                <span class="service-icon service-icon-red" data-icon="first-aid"></span>
+                <span class="service-text">
+                  <span class="service-name">Urgent Care</span>
+                  <span class="service-desc">we offer urgent care for none ...</span>
+                </span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="service-panel">
+                <p>Walk in care for non life threatening problems that still need
+                   to be seen today, with no appointment required.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============ FIND DOCTORS BY SPECIALTY ============ -->
+        <section class="panel">
+          <h2 class="panel-title">Find Doctors By Specialty</h2>
+          <p class="panel-subtitle">Select a Specialty to View all Doctors and schedule an Appointment</p>
+
+          <div class="specialty-grid">
+
+            <div class="specialty-item">
+              <button class="specialty-head" type="button">
+                <span>Anesthesiology</span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="specialty-panel">
+                <a href="#">View all Anesthesiology doctors</a>
+              </div>
+            </div>
+
+            <div class="specialty-item">
+              <button class="specialty-head" type="button">
+                <span>Dermatology</span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="specialty-panel">
+                <a href="#">View all Dermatology doctors</a>
+              </div>
+            </div>
+
+            <div class="specialty-item">
+              <button class="specialty-head" type="button">
+                <span>Emergency medicine</span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="specialty-panel">
+                <a href="#">View all Emergency medicine doctors</a>
+              </div>
+            </div>
+
+            <div class="specialty-item">
+              <button class="specialty-head" type="button">
+                <span>Neurology</span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="specialty-panel">
+                <a href="#">View all Neurology doctors</a>
+              </div>
+            </div>
+
+            <div class="specialty-item">
+              <button class="specialty-head" type="button">
+                <span>Consultation</span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="specialty-panel">
+                <a href="#">View all Consultation doctors</a>
+              </div>
+            </div>
+
+            <div class="specialty-item">
+              <button class="specialty-head" type="button">
+                <span>Ophthalmology</span>
+                <span class="chevron" data-icon="chevron-down"></span>
+              </button>
+              <div class="specialty-panel">
+                <a href="#">View all Ophthalmology doctors</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </main>
+
+      <!-- ===================== FOOTER ===================== -->
+      <footer class="footer">
+        <p class="footer-copy">© 2026, made with <span class="footer-heart">&#10084;</span> by <b>MyPiHUB</b> for a better web.</p>
+        <nav class="footer-links">
+          <a href="#">MyPatientHUB</a>
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+        </nav>
+      </footer>
+    </div>
+  </div>
+
+  <script src="icons.js"></script>
+  <script src="finddoctor.js"></script>
+</body>
+</html>

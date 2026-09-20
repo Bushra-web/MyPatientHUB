@@ -1,0 +1,287 @@
+/* =========================================================
+   FIND DOCTOR PAGE
+   Loaded after styles.css, so it only adds the pieces that
+   are unique to this page.
+   ========================================================= */
+
+/* ============ HERO BANNER ============ */
+.hero {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: #b5179e; /* fallback while the image loads */
+  background-image: url("Find Doctor-bg.png");
+  background-size: cover;
+  background-position: center;
+  padding: 18px 26px 54px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-card);
+}
+
+/* header row sitting on top of the banner */
+.hero-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* the shared topbar pieces need to read as white over the banner */
+.hero .hamburger,
+.hero .page-title,
+.hero .breadcrumb,
+.hero .breadcrumb-icon,
+.hero .crumb-sep,
+.hero .crumb-current,
+.hero .logout-btn,
+.hero .logout-btn .nav-icon {
+  color: #ffffff;
+}
+.hero .hamburger .nav-icon { width: 24px; height: 24px; }
+.hero .hamburger:hover { background: rgba(255, 255, 255, 0.18); }
+
+.hero .search-box {
+  background: #ffffff;
+  min-width: 240px;
+}
+
+.hero .icon-btn {
+  background: transparent;
+  color: #ffffff;
+}
+.hero .icon-btn:hover { background: rgba(255, 255, 255, 0.18); }
+
+/* banner headline block */
+.hero-body {
+  text-align: center;
+  padding: 26px 0 10px;
+}
+
+.hero-title {
+  margin: 0 0 6px;
+  font-size: 46px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.hero-subtitle {
+  margin: 0 0 26px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* search row inside the banner */
+.hero-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-search input {
+  width: 300px;
+  max-width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 15px 18px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--navy);
+  background: #ffffff;
+}
+.hero-search input::placeholder { color: #9aa2b8; }
+
+.hero-btn {
+  background: #17b3d4;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border-radius: 10px;
+  transition: background 0.15s ease;
+}
+.hero-btn:hover { background: #139ab7; }
+
+/* ============ SHARED PANEL (white rounded section) ============ */
+.panel {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 34px 30px 38px;
+  margin-bottom: 26px;
+}
+
+.panel-title {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #2c3e70;
+}
+
+.panel-subtitle {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  color: #3b4a72;
+}
+
+/* ============ SPECIAL SERVICES ============ */
+.services-grid,
+.specialty-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.service-item,
+.specialty-item {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(30, 39, 73, 0.10);
+  overflow: hidden;
+}
+
+.service-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  text-align: left;
+}
+
+.service-icon {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.service-icon svg { width: 100%; height: 100%; }
+
+/* each service keeps its own accent colour, like the mock-up */
+.service-icon-pink   { color: #e8365d; }
+.service-icon-teal   { color: #14b8a6; }
+.service-icon-orange { color: #f97316; }
+.service-icon-red    { color: #ef4444; }
+
+.service-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.service-name {
+  font-size: 21px;
+  font-weight: 700;
+  color: #2c3e70;
+  line-height: 1.25;
+}
+
+.service-desc {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4a5878;
+  line-height: 1.4;
+}
+
+/* ============ SPECIALTY DROPDOWNS ============ */
+.specialty-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 24px;
+  text-align: left;
+  font-size: 21px;
+  font-weight: 600;
+  color: #2c3e70;
+}
+
+/* ============ CHEVRON + ACCORDION BEHAVIOUR ============ */
+.chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #6b7897;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+.chevron svg { width: 100%; height: 100%; }
+
+/* rotated when its section is open */
+.service-item.open .chevron,
+.specialty-item.open .chevron {
+  transform: rotate(180deg);
+}
+
+/* collapsed by default, revealed by the .open class from finddoctor.js */
+.service-panel,
+.specialty-panel {
+  display: none;
+  padding: 0 20px 20px;
+  font-size: 15px;
+  color: #4a5878;
+  line-height: 1.55;
+}
+.service-item.open .service-panel,
+.specialty-item.open .specialty-panel {
+  display: block;
+}
+
+.service-panel p { margin: 0; }
+
+.specialty-panel a {
+  color: var(--pink);
+  font-weight: 600;
+  font-size: 15px;
+}
+.specialty-panel a:hover { text-decoration: underline; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1080px) {
+  .services-grid,
+  .specialty-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 38px; }
+}
+
+@media (max-width: 860px) {
+  .hero { padding: 16px 18px 42px; }
+  .hero-search input { width: 260px; }
+}
+
+@media (max-width: 640px) {
+  .hero-topbar { gap: 12px; }
+  .hero .topbar-left,
+  .hero .topbar-right { width: 100%; }
+  .hero .topbar-right { justify-content: space-between; gap: 12px; }
+  .hero .search-box { flex: 1; min-width: 0; }
+  .hero-title { font-size: 30px; }
+  .hero-subtitle { font-size: 15px; }
+  .hero-search { flex-direction: column; }
+  .hero-search input,
+  .hero-btn { width: 100%; }
+  .panel { padding: 24px 18px 28px; }
+  .panel-title { font-size: 24px; }
+  .panel-subtitle { font-size: 16px; }
+  .service-name { font-size: 18px; }
+  .service-desc { font-size: 14px; }
+  .specialty-head { font-size: 18px; padding: 18px; }
+  .service-icon { width: 46px; height: 46px; }
+}
